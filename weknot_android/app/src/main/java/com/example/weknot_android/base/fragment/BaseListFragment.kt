@@ -1,13 +1,17 @@
 package com.example.weknot_android.base.fragment
 
 import android.os.Bundle
+
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.weknot_android.R
 import com.example.weknot_android.base.viewmodel.BaseViewModel
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 abstract class BaseListFragment<VB : ViewDataBinding, VM : BaseViewModel<*>> : BaseFragment<VB, VM>() {

@@ -22,7 +22,7 @@ import com.example.weknot_android.viewmodel.FeedViewModel
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>() ,SwipeRefreshLayout.OnRefreshListener {
+class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun getLayoutId(): Int {
         return R.layout.feed_fragment
@@ -48,6 +48,7 @@ class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>() ,Swi
             })
 
             with(feedAdapter) {
+
                 likeEvent.observe(this@FeedFragment, Observer {
                     feedId.value = it
                     postFeedLike()
@@ -87,7 +88,6 @@ class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>() ,Swi
         viewModel.getFeeds()
         binding.swipeRefreshLayout.isRefreshing = false
     }
-
 
     private fun setUp() {
         binding.feedRecyclerview.addOnScrollListener(scrollListener)

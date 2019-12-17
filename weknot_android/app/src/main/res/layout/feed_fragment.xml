@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <import type="android.view.View" />
 
@@ -9,6 +10,7 @@
             name="viewModel"
             type="com.example.weknot_android.viewmodel.FeedViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,6 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/feed_recyclerview"
                 android:layout_width="match_parent"
@@ -30,6 +33,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:adapter="@{viewModel.feedAdapter}"
                 android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"/>
+
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -57,4 +61,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

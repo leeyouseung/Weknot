@@ -60,6 +60,7 @@
                 android:background="@drawable/background_radius_dark"
                 android:text="@string/yes_text"
                 android:onClick="@{() -> viewModel.onClickExit()}"/>
+
         </LinearLayout>
 
         <TextView
@@ -78,4 +79,5 @@
             android:onClick="@{() -> viewModel.onClickReport()}"/>
 
     </LinearLayout>
+
 </layout>

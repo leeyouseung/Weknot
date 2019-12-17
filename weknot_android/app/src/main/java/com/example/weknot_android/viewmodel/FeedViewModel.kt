@@ -11,6 +11,7 @@ import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.FeedAdapter
 
 class FeedViewModel(application: Application) : BaseViewModel<List<Feed>>(application) {
+
     private val feedComm = FeedComm()
 
     val feedId: MutableLiveData<Int> = MutableLiveData()

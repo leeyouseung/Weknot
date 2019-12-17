@@ -39,6 +39,7 @@ class MainActivity: BaseActivity<MainActivityBinding, MainViewModel>() {
 
     override fun initObserver() {
         with(viewModel) {
+
             onErrorEvent.observe(this@MainActivity, Observer {
                 simpleToast(it.message)
             })
