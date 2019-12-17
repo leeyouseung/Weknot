@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.ProfileActivityBinding
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.viewmodel.ProfileViewModel
 
 class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>() , SwipeRefreshLayout.OnRefreshListener {
@@ -62,7 +61,7 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
 
                 openPicture.observe(this@ProfileActivity, Observer {
                     val intent = Intent(this@ProfileActivity, PictureActivity::class.java)
-                    intent.putExtra("url", Strings.MAIN_HOST + "/image/" + it)
+                    intent.putExtra("url", Constants.MAIN_HOST + "/image/" + it)
                     startActivity(intent)
                 })
             }

@@ -5,17 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.chat.Chat
 import com.example.weknot_android.model.chat.PrivateChatRoom
-import com.example.weknot_android.model.user.FbUser
 import com.example.weknot_android.model.user.Profile
-import com.example.weknot_android.model.user.User
 import com.example.weknot_android.network.comm.UserComm
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
-import com.example.weknot_android.widget.recyclerview.adapter.ChatMemberAdapter
 import com.example.weknot_android.widget.recyclerview.adapter.MessageAdapter
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import io.reactivex.observers.DisposableSingleObserver
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -162,6 +157,6 @@ class PrivateChatViewModel(application: Application) : BaseViewModel<Profile>(ap
         super.onRetrieveDataSuccess(data)
 
         name.value = data.name
-        photo.value = Strings.MAIN_HOST + "/image/" + data.photo
+        photo.value = Constants.MAIN_HOST + "/image/" + data.photo
     }
 }

@@ -1,10 +1,9 @@
 package com.example.weknot_android.widget.recyclerview.viewmodel
 
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.example.weknot_android.base.viewmodel.BaseItemViewModel
 import com.example.weknot_android.model.user.Friend
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.recyclerview.navigator.social.SocialItemNavigator
 
 class SocialItemViewModel : BaseItemViewModel<Friend, SocialItemNavigator>() {
@@ -16,7 +15,7 @@ class SocialItemViewModel : BaseItemViewModel<Friend, SocialItemNavigator>() {
     override fun bind(data: Friend) {
         name.value = data.friendName
         point.value = data.friendPoint.toString() + "점"
-        picture.value = Strings.MAIN_HOST + "/image/" + data.friendPhoto
+        picture.value = Constants.MAIN_HOST + "/image/" + data.friendPhoto
         isFriend.value = data.friendState != 0
     }
 

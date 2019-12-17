@@ -1,6 +1,6 @@
 package com.example.weknot_android.util
 
-object Strings {
+object Constants {
     const val MAIN_HOST = "http://192.168.0.48:8000"
 
     // 10.80.162.103:8000

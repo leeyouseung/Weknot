@@ -9,7 +9,7 @@ import com.example.weknot_android.model.user.User
 import com.example.weknot_android.model.videocall.VideoCall
 import com.example.weknot_android.network.comm.UserComm
 import com.example.weknot_android.network.comm.VideoCallComm
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
 import io.reactivex.observers.DisposableSingleObserver
 
@@ -45,8 +45,8 @@ class VideoCallViewModel(application: Application) : BaseViewModel<VideoCall>(ap
             override fun onSuccess(user: User) {
                 userInfo.putString("displayName", user.name)
                 userInfo.putString("email", user.phoneNumber)
-                userInfo.putString("avatarURL", Strings.MAIN_HOST + "/image/" + user.photo)
-                myPhoto.value = Strings.MAIN_HOST + "/image/" + user.photo
+                userInfo.putString("avatarURL", Constants.MAIN_HOST + "/image/" + user.photo)
+                myPhoto.value = Constants.MAIN_HOST + "/image/" + user.photo
             }
 
             override fun onError(e: Throwable) {
@@ -75,7 +75,7 @@ class VideoCallViewModel(application: Application) : BaseViewModel<VideoCall>(ap
         val observer = object : DisposableSingleObserver<Profile>() {
             override fun onSuccess(t: Profile) {
                 isLoading.value = false
-                otherPhoto.value = Strings.MAIN_HOST + "/image/" + t.photo
+                otherPhoto.value = Constants.MAIN_HOST + "/image/" + t.photo
                 otherName.value = t.name
             }
 

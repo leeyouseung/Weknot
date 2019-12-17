@@ -8,10 +8,8 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
-import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.base.activity.BasePictureActivity
 import com.example.weknot_android.databinding.PictureActivityBinding
-import com.example.weknot_android.util.Strings
 import com.example.weknot_android.viewmodel.PictureViewModel
 
 class PictureActivity : BasePictureActivity<PictureActivityBinding, PictureViewModel>() {

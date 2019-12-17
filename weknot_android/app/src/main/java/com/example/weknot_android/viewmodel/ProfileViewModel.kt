@@ -11,7 +11,7 @@ import com.example.weknot_android.network.comm.FeedComm
 import com.example.weknot_android.network.comm.SocialComm
 import com.example.weknot_android.network.comm.UserComm
 import com.example.weknot_android.network.request.FriendRequest
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.FeedAdapter
 import io.reactivex.observers.DisposableSingleObserver
@@ -95,7 +95,7 @@ open class ProfileViewModel(application: Application) : BaseViewModel<Profile>(a
         userBirth.value = data.birth
         userIntro.value = data.intro
         userPoint.value = data.point.toString() + "점"
-        userPicture.value = Strings.MAIN_HOST + "/image/" + data.photo
+        userPicture.value = Constants.MAIN_HOST + "/image/" + data.photo
         if (data.gender == "m") {
             userGender.value = R.drawable.man_icon
         }

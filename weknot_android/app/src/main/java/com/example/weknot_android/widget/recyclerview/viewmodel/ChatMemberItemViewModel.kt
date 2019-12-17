@@ -3,7 +3,7 @@ package com.example.weknot_android.widget.recyclerview.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.example.weknot_android.base.viewmodel.BaseItemViewModel
 import com.example.weknot_android.model.user.FbUser
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.recyclerview.navigator.chatmember.ChatMemberItemNavigator
 
 class ChatMemberItemViewModel : BaseItemViewModel<FbUser, ChatMemberItemNavigator>() {
@@ -12,7 +12,7 @@ class ChatMemberItemViewModel : BaseItemViewModel<FbUser, ChatMemberItemNavigato
     val name = MutableLiveData<String>()
 
     override fun bind(data: FbUser) {
-        photo.value = Strings.MAIN_HOST + "/image/" + data.photo
+        photo.value = Constants.MAIN_HOST + "/image/" + data.photo
         name.value = data.name
     }
 

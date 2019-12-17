@@ -7,7 +7,6 @@ import com.example.weknot_android.model.user.User
 import com.example.weknot_android.network.comm.SignComm
 import com.example.weknot_android.network.request.LoginRequest
 import com.example.weknot_android.network.response.data.LoginData
-import com.example.weknot_android.util.Strings
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.android.schedulers.AndroidSchedulers

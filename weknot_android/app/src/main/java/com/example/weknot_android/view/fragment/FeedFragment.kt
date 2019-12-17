@@ -9,7 +9,7 @@ import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.fragment.BaseListFragment
 import com.example.weknot_android.databinding.FeedFragmentBinding
-import com.example.weknot_android.util.Strings
+import com.example.weknot_android.util.Constants
 import com.example.weknot_android.view.activity.FeedWriteActivity
 import com.example.weknot_android.view.activity.PictureActivity
 import com.example.weknot_android.view.activity.ProfileActivity
@@ -54,7 +54,7 @@ class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>() ,Swi
 
                 openPicture.observe(this@FeedFragment, Observer {
                     val intent = Intent(context, PictureActivity::class.java)
-                    intent.putExtra("url", Strings.MAIN_HOST + "/image/" + it)
+                    intent.putExtra("url", Constants.MAIN_HOST + "/image/" + it)
                     startActivity(intent)
                 })
             }
