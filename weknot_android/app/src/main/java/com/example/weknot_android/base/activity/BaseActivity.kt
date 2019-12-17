@@ -12,12 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.databinding.AppBarBinding
 
 abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : AppCompatActivity() {
+
     protected lateinit var binding: VB
     protected lateinit var viewModel: VM
 

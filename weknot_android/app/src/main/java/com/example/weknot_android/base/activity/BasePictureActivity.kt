@@ -20,7 +20,6 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
-
 abstract class BasePictureActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : BaseActivity<VB, VM>() {
     private val PICK_FROM_ALBUM = 1
     private val REQUEST_IMAGE_CROP = 2

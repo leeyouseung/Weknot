@@ -2,20 +2,17 @@ package com.example.weknot_android.view.dialog
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+
 import androidx.fragment.app.FragmentManager
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.BaseDialog
 import com.example.weknot_android.databinding.CreateRoomDialogBinding
 import com.example.weknot_android.view.activity.ChatActivity
 import com.example.weknot_android.viewmodel.CreateRoomViewModel
-import com.example.weknot_android.widget.SingleLiveEvent
 
 class CreateRoomDialog : BaseDialog<CreateRoomDialogBinding, CreateRoomViewModel>() {
 
@@ -78,5 +75,4 @@ class CreateRoomDialog : BaseDialog<CreateRoomDialogBinding, CreateRoomViewModel
         binding.roomNameText.setText("")
         binding.roomTypeSpinner.setSelection(0)
     }
-
 }

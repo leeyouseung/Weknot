@@ -1,11 +1,16 @@
 package com.example.weknot_android.view.activity
 
 import android.content.Intent
+
 import android.graphics.Bitmap
 import android.graphics.Color
+
 import android.net.Uri
+
 import android.os.Bundle
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
@@ -31,6 +36,7 @@ class PictureActivity : BasePictureActivity<PictureActivityBinding, PictureViewM
 
     override fun initObserver() {
         with(viewModel) {
+
             downloadEvent.observe(this@PictureActivity, Observer {
                 sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(it)))
                 simpleToast(R.string.download_message)

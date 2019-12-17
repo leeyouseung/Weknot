@@ -1,7 +1,9 @@
 package com.example.weknot_android.view.activity
 
 import android.os.Bundle
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity

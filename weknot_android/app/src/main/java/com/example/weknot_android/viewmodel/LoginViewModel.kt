@@ -14,6 +14,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class LoginViewModel(application: Application) : BaseViewModel<LoginData>(application) {
+
     private val signComm = SignComm()
 
     var request = LoginRequest()

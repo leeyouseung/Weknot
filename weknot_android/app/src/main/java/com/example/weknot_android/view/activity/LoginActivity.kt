@@ -1,6 +1,7 @@
 package com.example.weknot_android.view.activity
 
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
@@ -26,6 +27,7 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
 
     override fun initObserver() {
         with(viewModel) {
+
             openSignUp.observe(this@LoginActivity, Observer {
                 startActivity(SignUpActivity::class.java)
             })

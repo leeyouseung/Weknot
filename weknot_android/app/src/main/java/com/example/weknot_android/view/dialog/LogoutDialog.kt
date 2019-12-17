@@ -1,7 +1,9 @@
 package com.example.weknot_android.view.dialog
 
 import androidx.fragment.app.FragmentManager
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.BaseDialog

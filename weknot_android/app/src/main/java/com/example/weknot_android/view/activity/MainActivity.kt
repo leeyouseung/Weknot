@@ -1,9 +1,13 @@
 package com.example.weknot_android.view.activity
 
 import android.os.Bundle
+
 import android.view.MenuItem
+
 import androidx.lifecycle.Observer
+
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
@@ -11,12 +15,12 @@ import com.example.weknot_android.databinding.MainActivityBinding
 import com.example.weknot_android.view.dialog.LogoutDialog
 import com.example.weknot_android.viewmodel.MainViewModel
 import com.example.weknot_android.widget.viewpager.MainPagerAdapter
-import com.google.android.material.tabs.TabLayout
 
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity: BaseActivity<MainActivityBinding, MainViewModel>() {
 
-    private var PAGE_COUNT: Int = 5
+    private val PAGE_COUNT: Int = 5
 
     override val TAG: String
         get() = this.javaClass.name

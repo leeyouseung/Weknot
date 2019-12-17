@@ -1,13 +1,16 @@
 package com.example.weknot_android.view.activity
 
-import android.R.id
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+
 import androidx.lifecycle.Observer
+
 import com.bumptech.glide.Glide
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
@@ -33,6 +36,7 @@ class FeedWriteActivity : BasePictureActivity<FeedWriteActivityBinding, FeedWrit
 
     override fun initObserver() {
         with(viewModel) {
+
             openMain.observe(this@FeedWriteActivity, Observer {
                 startActivityWithFinish(MainActivity::class.java)
             })

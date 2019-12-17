@@ -1,10 +1,9 @@
 package com.example.weknot_android.view.fragment
 
 import android.content.Intent
-import android.os.Bundle
-import android.view.View
-import android.widget.Toast
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.fragment.BaseFragment
@@ -29,6 +28,7 @@ class SocialFragment : BaseFragment<SocialFragmentBinding, SocialViewModel>() {
 
     override fun initObserver() {
         with(viewModel) {
+
             onErrorEvent.observe(this@SocialFragment, Observer {
                 simpleToast(it.message)
             })
@@ -53,6 +53,7 @@ class SocialFragment : BaseFragment<SocialFragmentBinding, SocialViewModel>() {
             }
 
             with(friendAdapter) {
+
                 openChatRoom.observe(this@SocialFragment, Observer {
                     val intent = Intent(context, PrivateChatActivity::class.java)
                     intent.putExtra("id", it)

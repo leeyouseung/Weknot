@@ -2,15 +2,14 @@ package com.example.weknot_android.view.activity
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import android.util.Log
-import android.view.ActionMode
-import androidx.lifecycle.ViewModelProviders
-import com.example.weknot_android.view.navigator.VideoCallNavigator
-import com.example.weknot_android.viewmodel.VideoCallViewModel
-import org.jitsi.meet.sdk.*
-import java.lang.ref.WeakReference
 
+import android.util.Log
+
+import com.example.weknot_android.view.navigator.VideoCallNavigator
+
+import org.jitsi.meet.sdk.*
+
+import java.lang.ref.WeakReference
 
 class VideoCallActivity : JitsiMeetActivity() {
 

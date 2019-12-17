@@ -1,9 +1,13 @@
 package com.example.weknot_android.view.fragment
 
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.View
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.fragment.BaseFragment
@@ -12,11 +16,9 @@ import com.example.weknot_android.view.activity.ProfileActivity
 import com.example.weknot_android.view.activity.VideoCallActivity
 import com.example.weknot_android.view.navigator.VideoCallNavigator
 import com.example.weknot_android.viewmodel.VideoCallViewModel
-import com.facebook.react.modules.core.PermissionListener
+
 import org.jitsi.meet.sdk.*
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions.Builder
-import java.net.MalformedURLException
-import java.net.URL
 
 class VideoCallFragment : BaseFragment<VideoCallFragmentBinding, VideoCallViewModel>(), VideoCallNavigator {
 
@@ -38,6 +40,7 @@ class VideoCallFragment : BaseFragment<VideoCallFragmentBinding, VideoCallViewMo
 
     override fun initObserver() {
         with(viewModel) {
+
             connectVideoCall.observe(this@VideoCallFragment, Observer {
 
                 val options: JitsiMeetConferenceOptions? = Builder()

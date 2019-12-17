@@ -1,12 +1,17 @@
 package com.example.weknot_android.view.activity
 
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+
 import androidx.lifecycle.Observer
+
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
@@ -33,6 +38,7 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
 
     override fun initObserver() {
         with(viewModel) {
+
             onErrorEvent.observe(this@ProfileActivity, Observer {
                 simpleToast(it.message)
             })

@@ -1,19 +1,20 @@
 package com.example.weknot_android.view.activity
 
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.MenuItem
+
 import androidx.lifecycle.Observer
+
 import com.bumptech.glide.Glide
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
 import com.example.weknot_android.databinding.SignUpActivityBinding
-import com.example.weknot_android.model.user.FbUser
-import com.example.weknot_android.view.dialog.LogoutDialog
 import com.example.weknot_android.viewmodel.SignUpViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewModel>() {
 
@@ -34,6 +35,7 @@ class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewMode
 
     override fun initObserver() {
         with(viewModel) {
+
             onSuccessEvent.observe(this@SignUpActivity, Observer {
                 simpleToast(it)
             })

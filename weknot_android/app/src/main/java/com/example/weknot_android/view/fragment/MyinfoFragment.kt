@@ -1,10 +1,15 @@
 package com.example.weknot_android.view.fragment
 
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.View
+
 import androidx.lifecycle.Observer
+
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.fragment.BaseFragment
@@ -30,6 +35,7 @@ class MyinfoFragment : BaseFragment<MyinfoFragmentBinding, MyinfoViewModel>() , 
 
     override fun initObserver() {
         with(viewModel) {
+
             onErrorEvent.observe(this@MyinfoFragment, Observer {
                 simpleToast(it.message)
             })
@@ -41,6 +47,7 @@ class MyinfoFragment : BaseFragment<MyinfoFragmentBinding, MyinfoViewModel>() , 
             })
 
             with(feedAdapter) {
+
                 likeEvent.observe(this@MyinfoFragment, Observer {
                     feedId.value = it
                     postFeedLike()

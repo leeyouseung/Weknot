@@ -1,22 +1,23 @@
 package com.example.weknot_android.view.activity
 
 import android.annotation.SuppressLint
-import android.app.ActivityManager
-import android.content.Context
+
 import android.content.Intent
+
 import android.os.Bundle
+
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.fragment.app.FragmentActivity
+
 import androidx.lifecycle.Observer
+
 import com.example.weknot_android.BR
 import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.ChatActivityBinding
 import com.example.weknot_android.view.dialog.ExitRoomDialog
 import com.example.weknot_android.viewmodel.ChatViewModel
-
 
 class ChatActivity : BaseActivity<ChatActivityBinding, ChatViewModel>() {
 
@@ -117,5 +118,4 @@ class ChatActivity : BaseActivity<ChatActivityBinding, ChatViewModel>() {
     override fun onBackPressed() {
         newInstance(ExitRoomDialog(viewModel.roomKey!!)).show(supportFragmentManager)
     }
-
 }
