@@ -1,8 +1,11 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import android.view.View
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.R
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.feed.Feed
@@ -14,9 +17,11 @@ import com.example.weknot_android.network.request.FriendRequest
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.FeedAdapter
+
 import io.reactivex.observers.DisposableSingleObserver
 
 open class ProfileViewModel(application: Application) : BaseViewModel<Profile>(application) {
+
     private val userComm = UserComm()
     private val feedComm = FeedComm()
     private val socialComm = SocialComm()

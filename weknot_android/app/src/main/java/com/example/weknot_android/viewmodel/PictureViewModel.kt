@@ -1,19 +1,24 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
-import android.content.Intent
+
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
-import android.net.Uri
+
 import android.os.Environment
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.widget.SingleLiveEvent
+
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
+
 import java.text.SimpleDateFormat
+
 import java.util.*
 
 class PictureViewModel(application: Application) : BaseViewModel<Any>(application) {

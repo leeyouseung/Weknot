@@ -1,7 +1,9 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.chat.Chat
 import com.example.weknot_android.model.chat.PrivateChatRoom
@@ -10,12 +12,17 @@ import com.example.weknot_android.network.comm.UserComm
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.MessageAdapter
+
 import com.google.firebase.database.*
+
 import java.text.SimpleDateFormat
+
 import java.util.*
+
 import kotlin.collections.ArrayList
 
 class PrivateChatViewModel(application: Application) : BaseViewModel<Profile>(application) {
+
     private val userComm = UserComm()
 
     var otherUserId: String? = null

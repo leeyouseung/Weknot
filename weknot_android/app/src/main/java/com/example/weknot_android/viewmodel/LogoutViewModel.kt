@@ -1,6 +1,7 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.widget.SingleLiveEvent
 

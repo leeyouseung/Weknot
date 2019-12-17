@@ -1,13 +1,16 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.chat.ChatRoom
 import com.example.weknot_android.network.request.OpenChatRequest
 import com.example.weknot_android.view.dialog.CreateRoomDialog
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.OpenChatAdapter
+
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

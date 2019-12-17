@@ -1,22 +1,24 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.chat.ChatRoom
 import com.example.weknot_android.model.chat.OpenChatRoom
 import com.example.weknot_android.model.user.FbUser
 import com.example.weknot_android.model.user.User
 import com.example.weknot_android.widget.SingleLiveEvent
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
-
 
 class CreateRoomViewModel(application: Application) : BaseViewModel<Any>(application) {
 

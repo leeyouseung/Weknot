@@ -1,8 +1,11 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import android.os.Bundle
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.user.Profile
 import com.example.weknot_android.model.user.User
@@ -11,9 +14,11 @@ import com.example.weknot_android.network.comm.UserComm
 import com.example.weknot_android.network.comm.VideoCallComm
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
+
 import io.reactivex.observers.DisposableSingleObserver
 
 class VideoCallViewModel(application: Application) : BaseViewModel<VideoCall>(application) {
+
     private val videoCallComm = VideoCallComm()
     private val userComm = UserComm()
 

@@ -1,24 +1,35 @@
 package com.example.weknot_android.viewmodel
 
 import android.app.Application
+
 import android.content.Intent
+
 import android.net.Uri
+
 import android.os.Environment
+
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.network.comm.SignComm
 import com.example.weknot_android.network.request.SignUpRequest
 import com.example.weknot_android.widget.SingleLiveEvent
+
 import com.google.firebase.auth.FirebaseAuth
+
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+
 import java.io.File
 import java.io.IOException
+
 import java.lang.NullPointerException
+
 import java.util.*
 
 class SignUpViewModel(application: Application) : BaseViewModel<Any>(application) {
+
     private val signComm = SignComm()
 
     val request = SignUpRequest()
