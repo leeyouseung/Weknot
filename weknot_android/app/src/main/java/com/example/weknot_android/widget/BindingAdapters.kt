@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.weknot_android.R
-import net.gahfy.mvvmposts.utils.extension.getParentActivity
+import com.example.weknot_android.widget.extension.getParentActivity
 
 @BindingAdapter("adapter")
 fun setAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {

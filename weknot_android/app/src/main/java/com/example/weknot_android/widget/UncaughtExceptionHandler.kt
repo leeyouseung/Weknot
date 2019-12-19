@@ -1,8 +1,10 @@
 package com.example.weknot_android.widget
 
 import com.example.weknot_android.model.user.FbUser
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+
 import kotlin.system.exitProcess
 
 class UncaughtExceptionHandler(var roomKey: String) : Thread.UncaughtExceptionHandler {

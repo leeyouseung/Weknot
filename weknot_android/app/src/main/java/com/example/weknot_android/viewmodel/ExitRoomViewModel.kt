@@ -31,7 +31,6 @@ class ExitRoomViewModel(application: Application) : BaseViewModel<Any>(applicati
     }
 
     fun onClickReport() {
-
         FirebaseDatabase.getInstance().reference
                 .child("reports").push().setValue(roomKey)
 
