@@ -1,6 +1,7 @@
 package com.example.weknot_android.base
 
 import androidx.room.*
+
 import io.reactivex.Completable
 
 @Dao

@@ -3,7 +3,6 @@ package com.example.weknot_android.base.activity
 import android.app.ActivityManager
 
 import android.content.Context
-import android.content.Intent
 
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
@@ -92,7 +91,7 @@ abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : AppCo
     /**
      * Home 키를 눌렀을 때 실행
      */
-    protected open fun onHome() { }
+    protected open fun onHome() {}
 
     override fun setRequestedOrientation(requestedOrientation: Int) {
         if (VERSION.SDK_INT != VERSION_CODES.O) {

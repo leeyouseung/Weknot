@@ -18,6 +18,7 @@ import com.example.weknot_android.util.Constants
 import com.example.weknot_android.view.activity.PictureActivity
 import com.example.weknot_android.view.activity.ProfileActivity
 import com.example.weknot_android.viewmodel.MyinfoViewModel
+import com.example.weknot_android.widget.extension.shortToast
 
 class MyinfoFragment : BaseFragment<MyinfoFragmentBinding, MyinfoViewModel>() , SwipeRefreshLayout.OnRefreshListener {
 
@@ -37,13 +38,12 @@ class MyinfoFragment : BaseFragment<MyinfoFragmentBinding, MyinfoViewModel>() , 
         with(viewModel) {
 
             onErrorEvent.observe(this@MyinfoFragment, Observer {
-                simpleToast(it.message)
+                this@MyinfoFragment.shortToast(it.message)
             })
 
             openPictureEvent.observe(this@MyinfoFragment, Observer {
-                val intent = Intent(context, PictureActivity::class.java)
-                intent.putExtra("url", it)
-                startActivity(intent)
+                startActivity(Intent(context, PictureActivity::class.java)
+                        .putExtra("url", it))
             })
 
             with(feedAdapter) {
@@ -54,15 +54,13 @@ class MyinfoFragment : BaseFragment<MyinfoFragmentBinding, MyinfoViewModel>() , 
                 })
 
                 openProfile.observe(this@MyinfoFragment, Observer {
-                    val intent = Intent(context, ProfileActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, ProfileActivity::class.java)
+                            .putExtra("id", it))
                 })
 
                 openPicture.observe(this@MyinfoFragment, Observer {
-                    val intent = Intent(context, PictureActivity::class.java)
-                    intent.putExtra("url", Constants.MAIN_HOST + "/image/" + it)
-                    startActivity(intent)
+                    startActivity(Intent(context, PictureActivity::class.java)
+                            .putExtra("url", Constants.MAIN_HOST + "/image/" + it))
                 })
             }
         }

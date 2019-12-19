@@ -12,6 +12,7 @@ import com.example.weknot_android.base.BaseDialog
 import com.example.weknot_android.databinding.ExitRoomDialogBinding
 import com.example.weknot_android.view.activity.MainActivity
 import com.example.weknot_android.viewmodel.ExitRoomViewModel
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class ExitRoomDialog(var key: String) : BaseDialog<ExitRoomDialogBinding, ExitRoomViewModel>() {
 
@@ -36,7 +37,7 @@ class ExitRoomDialog(var key: String) : BaseDialog<ExitRoomDialogBinding, ExitRo
             })
 
             exitEvent.observe(this@ExitRoomDialog, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                this@ExitRoomDialog.startActivityWithFinish(MainActivity::class.java)
             })
         }
     }

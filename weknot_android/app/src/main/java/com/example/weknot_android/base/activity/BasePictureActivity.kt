@@ -1,26 +1,40 @@
 package com.example.weknot_android.base.activity
 
 import android.Manifest
+
 import android.annotation.SuppressLint
+
 import android.app.Activity
+
 import android.content.Intent
+
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+
 import android.net.Uri
+
 import android.os.AsyncTask
+
 import android.provider.MediaStore
+
 import android.widget.Toast
+
 import androidx.databinding.ViewDataBinding
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+
 import java.io.IOException
 import java.io.InputStream
+
 import java.net.HttpURLConnection
 import java.net.URL
+
 import java.util.*
 
 abstract class BasePictureActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : BaseActivity<VB, VM>() {
+
     private val PICK_FROM_ALBUM = 1
     private val REQUEST_IMAGE_CROP = 2
 
@@ -80,13 +94,13 @@ abstract class BasePictureActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> 
         }
     }
 
-    protected open fun requestNotOkEvent() { }
+    protected open fun requestNotOkEvent() {}
 
-    protected open fun pickNextEvent(data: Intent) { }
+    protected open fun pickNextEvent(data: Intent) {}
 
-    protected open fun cropNextEvent() { }
+    protected open fun cropNextEvent() {}
 
-    protected open fun setBitmap(bitmap: Bitmap?) { }
+    protected open fun setBitmap(bitmap: Bitmap?) {}
 
     @SuppressLint("StaticFieldLeak")
     inner class BitmapTask : AsyncTask<String?, Int?, Bitmap?>() {

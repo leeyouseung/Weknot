@@ -1,24 +1,33 @@
 package com.example.weknot_android.base
 
 import android.app.Dialog
+
 import android.content.Intent
+
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+
 import android.os.Bundle
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
 import android.view.Window
+
 import android.widget.RelativeLayout
-import android.widget.Toast
+
 import androidx.annotation.LayoutRes
+
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+
 import androidx.lifecycle.ViewModelProviders
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.widget.SingleLiveEvent
 
@@ -94,27 +103,6 @@ abstract class BaseDialog<VB : ViewDataBinding, VM : BaseViewModel<*>> : DialogF
     override fun dismiss() {
         super.dismiss()
         dialogCloseEvent.call()
-    }
-
-    protected fun startActivity(activity: Class<*>) {
-        startActivity(Intent(context, activity))
-    }
-
-    protected fun startActivityWithFinish(activity: Class<*>) {
-        startActivityWithFinish(Intent(context, activity))
-    }
-
-    protected fun startActivityWithFinish(intent: Intent) {
-        startActivity(intent)
-        activity!!.finish()
-    }
-
-    protected fun simpleToast(message: String?) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-    }
-
-    protected fun simpleToast(message: Int) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     companion object {
