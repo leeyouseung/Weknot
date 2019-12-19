@@ -11,6 +11,7 @@ import com.example.weknot_android.databinding.SocialFragmentBinding
 import com.example.weknot_android.view.activity.PrivateChatActivity
 import com.example.weknot_android.view.activity.ProfileActivity
 import com.example.weknot_android.viewmodel.SocialViewModel
+import com.example.weknot_android.widget.extension.shortToast
 
 class SocialFragment : BaseFragment<SocialFragmentBinding, SocialViewModel>() {
 
@@ -30,7 +31,7 @@ class SocialFragment : BaseFragment<SocialFragmentBinding, SocialViewModel>() {
         with(viewModel) {
 
             onErrorEvent.observe(this@SocialFragment, Observer {
-                simpleToast(it.message)
+                this@SocialFragment.shortToast(it.message)
             })
 
             with(receiveAdapter) {
@@ -40,30 +41,26 @@ class SocialFragment : BaseFragment<SocialFragmentBinding, SocialViewModel>() {
                 })
 
                 openChatRoom.observe(this@SocialFragment, Observer {
-                    val intent = Intent(context, PrivateChatActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, PrivateChatActivity::class.java)
+                            .putExtra("id", it))
                 })
 
                 openProfile.observe(this@SocialFragment, Observer {
-                    val intent = Intent(context, ProfileActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, ProfileActivity::class.java)
+                            .putExtra("id", it))
                 })
             }
 
             with(friendAdapter) {
 
                 openChatRoom.observe(this@SocialFragment, Observer {
-                    val intent = Intent(context, PrivateChatActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, PrivateChatActivity::class.java)
+                            .putExtra("id", it))
                 })
 
                 openProfile.observe(this@SocialFragment, Observer {
-                    val intent = Intent(context, ProfileActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, ProfileActivity::class.java)
+                            .putExtra("id", it))
                 })
             }
         }

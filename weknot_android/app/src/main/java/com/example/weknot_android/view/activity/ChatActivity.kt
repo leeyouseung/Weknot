@@ -18,6 +18,7 @@ import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.ChatActivityBinding
 import com.example.weknot_android.view.dialog.ExitRoomDialog
 import com.example.weknot_android.viewmodel.ChatViewModel
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class ChatActivity : BaseActivity<ChatActivityBinding, ChatViewModel>() {
 
@@ -48,7 +49,7 @@ class ChatActivity : BaseActivity<ChatActivityBinding, ChatViewModel>() {
             })
 
             terminateEvent.observe(this@ChatActivity, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                this@ChatActivity.startActivityWithFinish(MainActivity::class.java)
             })
 
             messageAdapter.openProfile.observe(this@ChatActivity, Observer {

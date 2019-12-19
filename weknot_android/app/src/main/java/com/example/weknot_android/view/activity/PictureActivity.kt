@@ -16,6 +16,7 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
 import com.example.weknot_android.databinding.PictureActivityBinding
 import com.example.weknot_android.viewmodel.PictureViewModel
+import com.example.weknot_android.widget.extension.shortToast
 
 class PictureActivity : BasePictureActivity<PictureActivityBinding, PictureViewModel>() {
 
@@ -39,7 +40,7 @@ class PictureActivity : BasePictureActivity<PictureActivityBinding, PictureViewM
 
             downloadEvent.observe(this@PictureActivity, Observer {
                 sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(it)))
-                simpleToast(R.string.download_message)
+                this@PictureActivity.shortToast(R.string.download_message)
             })
 
             backEvent.observe(this@PictureActivity, Observer {

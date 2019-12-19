@@ -19,6 +19,8 @@ import com.example.weknot_android.view.activity.FeedWriteActivity
 import com.example.weknot_android.view.activity.PictureActivity
 import com.example.weknot_android.view.activity.ProfileActivity
 import com.example.weknot_android.viewmodel.FeedViewModel
+import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -40,11 +42,11 @@ class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>(), Swi
         with(viewModel) {
 
             openFeedWrite.observe(this@FeedFragment, Observer {
-                startActivityWithFinish(FeedWriteActivity::class.java)
+                this@FeedFragment.startActivityWithFinish(FeedWriteActivity::class.java)
             })
 
             onErrorEvent.observe(this@FeedFragment, Observer {
-                simpleToast(it.message)
+                this@FeedFragment.shortToast(it.message)
             })
 
             with(feedAdapter) {
@@ -55,15 +57,13 @@ class FeedFragment : BaseListFragment<FeedFragmentBinding, FeedViewModel>(), Swi
                 })
 
                 openProfile.observe(this@FeedFragment, Observer {
-                    val intent = Intent(context, ProfileActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(context, ProfileActivity::class.java)
+                            .putExtra("id", it))
                 })
 
                 openPicture.observe(this@FeedFragment, Observer {
-                    val intent = Intent(context, PictureActivity::class.java)
-                    intent.putExtra("url", Constants.MAIN_HOST + "/image/" + it)
-                    startActivity(intent)
+                    startActivity(Intent(context, PictureActivity::class.java)
+                            .putExtra("url", Constants.MAIN_HOST + "/image/" + it))
                 })
             }
         }

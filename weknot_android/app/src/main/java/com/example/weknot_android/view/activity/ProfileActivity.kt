@@ -18,6 +18,7 @@ import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.ProfileActivityBinding
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.viewmodel.ProfileViewModel
+import com.example.weknot_android.widget.extension.shortToast
 
 class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>() , SwipeRefreshLayout.OnRefreshListener {
 
@@ -40,7 +41,7 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
         with(viewModel) {
 
             onErrorEvent.observe(this@ProfileActivity, Observer {
-                simpleToast(it.message)
+                this@ProfileActivity.shortToast(it!!.message)
             })
 
             onRefreshEvent.observe(this@ProfileActivity, Observer {
@@ -48,9 +49,8 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
             })
 
             openPictureEvent.observe(this@ProfileActivity, Observer {
-                val intent = Intent(this@ProfileActivity, PictureActivity::class.java)
-                intent.putExtra("url", it)
-                startActivity(intent)
+                startActivity(Intent(this@ProfileActivity, PictureActivity::class.java)
+                        .putExtra("url", it))
             })
 
             with(feedAdapter) {
@@ -60,15 +60,13 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
                 })
 
                 openProfile.observe(this@ProfileActivity, Observer {
-                    val intent = Intent(this@ProfileActivity, ProfileActivity::class.java)
-                    intent.putExtra("id", it)
-                    startActivity(intent)
+                    startActivity(Intent(this@ProfileActivity, ProfileActivity::class.java)
+                            .putExtra("id", it))
                 })
 
                 openPicture.observe(this@ProfileActivity, Observer {
-                    val intent = Intent(this@ProfileActivity, PictureActivity::class.java)
-                    intent.putExtra("url", Constants.MAIN_HOST + "/image/" + it)
-                    startActivity(intent)
+                    startActivity(Intent(this@ProfileActivity, PictureActivity::class.java)
+                            .putExtra("url", Constants.MAIN_HOST + "/image/" + it))
                 })
             }
         }
@@ -105,13 +103,12 @@ class ProfileActivity : BaseActivity<ProfileActivityBinding, ProfileViewModel>()
         }
         else if (item.itemId == R.id.menu_profile) {
             when {
-                binding.friendBtn.visibility == View.INVISIBLE -> simpleToast(R.string.check_my_id_message)
+                binding.friendBtn.visibility == View.INVISIBLE -> this@ProfileActivity.shortToast(R.string.check_my_id_message)
                 viewModel.userStatus.value!! == "친구" -> {
-                    val intent = Intent(this, PrivateChatActivity::class.java)
-                    intent.putExtra("id", viewModel.id.value)
-                    startActivity(intent)
+                    startActivity(Intent(this, PrivateChatActivity::class.java)
+                            .putExtra("id", viewModel.id.value))
                 }
-                else -> simpleToast(R.string.check_friend_message)
+                else -> this@ProfileActivity.shortToast(R.string.check_friend_message)
             }
             return true
         }

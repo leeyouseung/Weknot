@@ -8,6 +8,8 @@ import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.LoginActivityBinding
 import com.example.weknot_android.viewmodel.LoginViewModel
 import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivity
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
 
@@ -30,7 +32,7 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
         with(viewModel) {
 
             openSignUp.observe(this@LoginActivity, Observer {
-                startActivity(SignUpActivity::class.java)
+                this@LoginActivity.startActivity(SignUpActivity::class.java)
             })
 
             loginEvent.observe(this@LoginActivity, Observer {
@@ -47,7 +49,7 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
             })
 
             onSuccessEvent.observe(this@LoginActivity, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                this@LoginActivity.startActivityWithFinish(MainActivity::class.java)
             })
         }
     }

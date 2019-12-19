@@ -16,6 +16,8 @@ import com.example.weknot_android.base.fragment.BaseListFragment
 import com.example.weknot_android.databinding.OpenChatFragmentBinding
 import com.example.weknot_android.view.activity.ChatActivity
 import com.example.weknot_android.viewmodel.OpenChatViewModel
+import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -37,7 +39,7 @@ class OpenChatFragment : BaseListFragment<OpenChatFragmentBinding, OpenChatViewM
         with(viewModel) {
 
             onErrorEvent.observe(this@OpenChatFragment, Observer {
-                simpleToast(it.message)
+                this@OpenChatFragment.shortToast(it.message)
             })
 
             openCreateRoom.observe(this@OpenChatFragment, Observer {
@@ -49,9 +51,8 @@ class OpenChatFragment : BaseListFragment<OpenChatFragmentBinding, OpenChatViewM
             })
 
             openChatAdapter.openChatRoom.observe(this@OpenChatFragment, Observer {
-                val intent = Intent(context, ChatActivity::class.java)
-                intent.putExtra("key", it)
-                startActivityWithFinish(intent)
+                this@OpenChatFragment.startActivityWithFinish(Intent(context, ChatActivity::class.java)
+                        .putExtra("key", it))
             })
         }
     }

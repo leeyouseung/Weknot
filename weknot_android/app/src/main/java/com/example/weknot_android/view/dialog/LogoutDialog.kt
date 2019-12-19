@@ -10,6 +10,7 @@ import com.example.weknot_android.base.BaseDialog
 import com.example.weknot_android.databinding.LogoutDialogBinding
 import com.example.weknot_android.view.activity.LoginActivity
 import com.example.weknot_android.viewmodel.LogoutViewModel
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class LogoutDialog : BaseDialog<LogoutDialogBinding, LogoutViewModel>() {
 
@@ -34,7 +35,7 @@ class LogoutDialog : BaseDialog<LogoutDialogBinding, LogoutViewModel>() {
             })
 
             openLogin.observe(this@LogoutDialog, Observer {
-                startActivityWithFinish(LoginActivity::class.java)
+                this@LogoutDialog.startActivityWithFinish(LoginActivity::class.java)
             })
         }
     }

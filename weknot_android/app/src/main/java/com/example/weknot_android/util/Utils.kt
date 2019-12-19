@@ -1,16 +1,22 @@
 package com.example.weknot_android.util
 
 import com.example.weknot_android.BuildConfig
+
 import com.google.gson.GsonBuilder
+
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
+
 import retrofit2.Retrofit
 import retrofit2.Retrofit.Builder
 import retrofit2.converter.gson.GsonConverterFactory
+
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
+
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 

@@ -13,6 +13,8 @@ import com.example.weknot_android.base.BaseDialog
 import com.example.weknot_android.databinding.CreateRoomDialogBinding
 import com.example.weknot_android.view.activity.ChatActivity
 import com.example.weknot_android.viewmodel.CreateRoomViewModel
+import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class CreateRoomDialog : BaseDialog<CreateRoomDialogBinding, CreateRoomViewModel>() {
 
@@ -36,7 +38,7 @@ class CreateRoomDialog : BaseDialog<CreateRoomDialogBinding, CreateRoomViewModel
                 chatRoom.roomType = types[selectedPosition]
 
                 if (isEmpty()) {
-                    simpleToast(R.string.empty_message)
+                    this@CreateRoomDialog.shortToast(R.string.empty_message)
                     return@Observer
                 }
                 getUser()
@@ -47,9 +49,8 @@ class CreateRoomDialog : BaseDialog<CreateRoomDialogBinding, CreateRoomViewModel
             })
 
             openChatRoom.observe(this@CreateRoomDialog, Observer {
-                val intent = Intent(context, ChatActivity::class.java)
-                intent.putExtra("key", it)
-                startActivityWithFinish(intent)
+                this@CreateRoomDialog.startActivityWithFinish(Intent(context, ChatActivity::class.java)
+                        .putExtra("key", it))
             })
         }
     }

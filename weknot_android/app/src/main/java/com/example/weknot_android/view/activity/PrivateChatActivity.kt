@@ -47,9 +47,8 @@ class PrivateChatActivity : BaseActivity<PrivateChatActivityBinding, PrivateChat
             })
 
             openProfile.observe(this@PrivateChatActivity, Observer {
-                val intent = Intent(this@PrivateChatActivity, ProfileActivity::class.java)
-                intent.putExtra("id", otherUserId)
-                startActivity(intent)
+                startActivity(Intent(this@PrivateChatActivity, ProfileActivity::class.java)
+                        .putExtra("id", otherUserId))
             })
         }
     }
