@@ -10,9 +10,9 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.feed.Feed
 import com.example.weknot_android.model.user.Profile
-import com.example.weknot_android.network.comm.FeedComm
-import com.example.weknot_android.network.comm.SocialComm
-import com.example.weknot_android.network.comm.UserComm
+import com.example.weknot_android.network.client.FeedClient
+import com.example.weknot_android.network.client.SocialClient
+import com.example.weknot_android.network.client.UserClient
 import com.example.weknot_android.network.request.FriendRequest
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
@@ -22,9 +22,9 @@ import io.reactivex.observers.DisposableSingleObserver
 
 open class ProfileViewModel(application: Application) : BaseViewModel<Profile>(application) {
 
-    private val userComm = UserComm()
-    private val feedComm = FeedComm()
-    private val socialComm = SocialComm()
+    private val userComm = UserClient()
+    private val feedComm = FeedClient()
+    private val socialComm = SocialClient()
 
     var id: MutableLiveData<String> = MutableLiveData()
     val feedId: MutableLiveData<Int> = MutableLiveData()

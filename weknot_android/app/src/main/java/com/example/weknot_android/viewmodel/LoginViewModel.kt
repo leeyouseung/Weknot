@@ -6,7 +6,7 @@ import android.util.Log
 
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.user.User
-import com.example.weknot_android.network.comm.SignComm
+import com.example.weknot_android.network.client.SignClient
 import com.example.weknot_android.network.request.LoginRequest
 import com.example.weknot_android.network.response.data.LoginData
 import com.example.weknot_android.widget.SingleLiveEvent
@@ -19,7 +19,7 @@ import io.reactivex.schedulers.Schedulers
 
 class LoginViewModel(application: Application) : BaseViewModel<LoginData>(application) {
 
-    private val signComm = SignComm()
+    private val signComm = SignClient()
 
     var request = LoginRequest()
 

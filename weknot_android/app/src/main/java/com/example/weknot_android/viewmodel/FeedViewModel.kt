@@ -6,13 +6,13 @@ import androidx.lifecycle.MutableLiveData
 
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.feed.Feed
-import com.example.weknot_android.network.comm.FeedComm
+import com.example.weknot_android.network.client.FeedClient
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.FeedAdapter
 
 class FeedViewModel(application: Application) : BaseViewModel<List<Feed>>(application) {
 
-    private val feedComm = FeedComm()
+    private val feedComm = FeedClient()
 
     val feedId: MutableLiveData<Int> = MutableLiveData()
 

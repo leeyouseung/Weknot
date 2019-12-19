@@ -1,6 +1,6 @@
-package com.example.weknot_android.network.comm
+package com.example.weknot_android.network.client
 
-import com.example.weknot_android.base.BaseComm
+import com.example.weknot_android.base.BaseClient
 import com.example.weknot_android.model.user.User
 import com.example.weknot_android.network.api.SignApi
 import com.example.weknot_android.network.request.LoginRequest
@@ -11,7 +11,7 @@ import io.reactivex.Single
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 
-class SignComm : BaseComm<SignApi>() {
+class SignClient : BaseClient<SignApi>() {
 
     fun login(loginRequest: LoginRequest): Single<LoginData> {
         return api.login(loginRequest).map(getResponseObjectsFunction())

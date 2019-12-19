@@ -9,7 +9,7 @@ import org.json.JSONObject
 
 import java.util.*
 
-abstract class BaseComm<V> {
+abstract class BaseClient<V> {
 
     protected val api: V
         get() = Utils.RETROFIT.create(type())

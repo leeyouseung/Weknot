@@ -8,7 +8,7 @@ import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.chat.Chat
 import com.example.weknot_android.model.chat.PrivateChatRoom
 import com.example.weknot_android.model.user.Profile
-import com.example.weknot_android.network.comm.UserComm
+import com.example.weknot_android.network.client.UserClient
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.adapter.MessageAdapter
@@ -23,7 +23,7 @@ import kotlin.collections.ArrayList
 
 class PrivateChatViewModel(application: Application) : BaseViewModel<Profile>(application) {
 
-    private val userComm = UserComm()
+    private val userComm = UserClient()
 
     var otherUserId: String? = null
 

@@ -1,6 +1,6 @@
-package com.example.weknot_android.network.comm
+package com.example.weknot_android.network.client
 
-import com.example.weknot_android.base.BaseComm
+import com.example.weknot_android.base.BaseClient
 import com.example.weknot_android.model.chat.OpenChatRoom
 import com.example.weknot_android.model.user.User
 import com.example.weknot_android.network.api.OpenChatApi
@@ -8,7 +8,7 @@ import com.example.weknot_android.network.request.OpenChatRequest
 
 import io.reactivex.Single
 
-class OpenChatComm : BaseComm<OpenChatApi>() {
+class OpenChatClient : BaseClient<OpenChatApi>() {
 
     fun getChattingRooms(token: String): Single<List<OpenChatRoom>> {
         return api.getChattingRooms(token).map(getResponseObjectsFunction())

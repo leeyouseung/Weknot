@@ -11,7 +11,7 @@ import android.os.Environment
 import androidx.lifecycle.MutableLiveData
 
 import com.example.weknot_android.base.viewmodel.BaseViewModel
-import com.example.weknot_android.network.comm.FeedComm
+import com.example.weknot_android.network.client.FeedClient
 import com.example.weknot_android.widget.SingleLiveEvent
 
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -27,7 +27,7 @@ import java.util.*
 
 class FeedWriteViewModel(application: Application) : BaseViewModel<Any>(application) {
 
-    private val feedComm = FeedComm()
+    private val feedComm = FeedClient()
 
     val tempPictureUri: MutableLiveData<Uri> = MutableLiveData()
     val pictureUri: MutableLiveData<Uri> = MutableLiveData()

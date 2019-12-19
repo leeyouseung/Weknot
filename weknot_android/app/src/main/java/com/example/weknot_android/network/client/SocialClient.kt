@@ -1,6 +1,6 @@
-package com.example.weknot_android.network.comm
+package com.example.weknot_android.network.client
 
-import com.example.weknot_android.base.BaseComm
+import com.example.weknot_android.base.BaseClient
 import com.example.weknot_android.model.chat.PrivateChatRoom
 import com.example.weknot_android.model.user.Friend
 import com.example.weknot_android.network.api.SocialApi
@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 import io.reactivex.Single
 
-class SocialComm : BaseComm<SocialApi>() {
+class SocialClient : BaseClient<SocialApi>() {
 
     fun getFriends(token: String): Single<List<Friend>> {
         return api.getFriends(token).map(getResponseObjectsFunction())

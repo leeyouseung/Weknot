@@ -11,7 +11,7 @@ import android.os.Environment
 import androidx.lifecycle.MutableLiveData
 
 import com.example.weknot_android.base.viewmodel.BaseViewModel
-import com.example.weknot_android.network.comm.SignComm
+import com.example.weknot_android.network.client.SignClient
 import com.example.weknot_android.network.request.SignUpRequest
 import com.example.weknot_android.widget.SingleLiveEvent
 
@@ -30,7 +30,7 @@ import java.util.*
 
 class SignUpViewModel(application: Application) : BaseViewModel<Any>(application) {
 
-    private val signComm = SignComm()
+    private val signComm = SignClient()
 
     val request = SignUpRequest()
 

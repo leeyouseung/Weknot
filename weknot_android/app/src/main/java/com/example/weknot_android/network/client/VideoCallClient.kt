@@ -1,12 +1,12 @@
-package com.example.weknot_android.network.comm
+package com.example.weknot_android.network.client
 
-import com.example.weknot_android.base.BaseComm
+import com.example.weknot_android.base.BaseClient
 import com.example.weknot_android.model.videocall.VideoCall
 import com.example.weknot_android.network.api.VideoCallApi
 
 import io.reactivex.Single
 
-class VideoCallComm : BaseComm<VideoCallApi>() {
+class VideoCallClient : BaseClient<VideoCallApi>() {
 
     fun requestCall(token: String): Single<VideoCall> {
         return api.requestCall(token).map(getResponseObjectsFunction())

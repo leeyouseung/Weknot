@@ -6,13 +6,13 @@ import androidx.lifecycle.MutableLiveData
 
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.model.user.Friend
-import com.example.weknot_android.network.comm.SocialComm
+import com.example.weknot_android.network.client.SocialClient
 import com.example.weknot_android.network.request.FriendRequest
 import com.example.weknot_android.widget.recyclerview.adapter.SocialAdapter
 
 class SocialViewModel(application: Application) : BaseViewModel<List<Friend>>(application) {
 
-    private val socialComm = SocialComm()
+    private val socialComm = SocialClient()
 
     private var receiveList: ArrayList<Friend> = ArrayList()
     private var friendList: ArrayList<Friend> = ArrayList()
