@@ -7,6 +7,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
 import androidx.databinding.ViewDataBinding
+
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.weknot_android.R

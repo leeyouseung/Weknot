@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 
 abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel<*>> : Fragment() {
+
     protected lateinit var binding: VB
     protected lateinit var currentView: View
     protected lateinit var viewModel: VM
