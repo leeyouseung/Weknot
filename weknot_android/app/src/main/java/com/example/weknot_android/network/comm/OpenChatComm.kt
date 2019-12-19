@@ -5,6 +5,7 @@ import com.example.weknot_android.model.chat.OpenChatRoom
 import com.example.weknot_android.model.user.User
 import com.example.weknot_android.network.api.OpenChatApi
 import com.example.weknot_android.network.request.OpenChatRequest
+
 import io.reactivex.Single
 
 class OpenChatComm : BaseComm<OpenChatApi>() {

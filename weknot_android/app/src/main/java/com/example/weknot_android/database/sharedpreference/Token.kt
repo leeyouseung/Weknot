@@ -1,10 +1,12 @@
 package com.example.weknot_android.database.sharedpreference
 
 import android.annotation.SuppressLint
+
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
+
 import com.f2prateek.rx.preferences2.Preference
 import com.f2prateek.rx.preferences2.RxSharedPreferences
 

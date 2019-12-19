@@ -1,16 +1,24 @@
 package com.example.weknot_android.widget
 
 import android.net.Uri
+
 import android.view.View
+
 import android.widget.ImageView
 import android.widget.TextView
+
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.databinding.BindingAdapter
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+
 import androidx.recyclerview.widget.RecyclerView
+
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+
 import com.example.weknot_android.R
 import com.example.weknot_android.widget.extension.getParentActivity
 

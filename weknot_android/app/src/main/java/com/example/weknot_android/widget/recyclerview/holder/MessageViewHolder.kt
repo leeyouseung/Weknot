@@ -1,8 +1,10 @@
 package com.example.weknot_android.widget.recyclerview.holder
 
 import android.graphics.Color
+
 import android.view.Gravity
 import android.view.View
+
 import com.example.weknot_android.R
 import com.example.weknot_android.base.BaseViewHolder
 import com.example.weknot_android.databinding.MessageItemBinding
@@ -10,6 +12,7 @@ import com.example.weknot_android.model.chat.Chat
 import com.example.weknot_android.widget.recyclerview.navigator.message.MessageAdapterNavigator
 import com.example.weknot_android.widget.recyclerview.navigator.message.MessageItemNavigator
 import com.example.weknot_android.widget.recyclerview.viewmodel.MessageItemViewModel
+
 import com.google.firebase.auth.FirebaseAuth
 
 class MessageViewHolder(val binding: MessageItemBinding) : BaseViewHolder<MessageAdapterNavigator>(binding.root), MessageItemNavigator {

@@ -1,9 +1,11 @@
 package com.example.weknot_android.widget.recyclerview.holder
 
 import android.annotation.SuppressLint
+
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+
 import com.example.weknot_android.R
 import com.example.weknot_android.base.BaseViewHolder
 import com.example.weknot_android.databinding.FeedItemBinding

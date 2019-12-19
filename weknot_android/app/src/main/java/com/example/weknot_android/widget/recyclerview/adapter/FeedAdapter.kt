@@ -2,13 +2,17 @@ package com.example.weknot_android.widget.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.databinding.DataBindingUtil
+
 import androidx.recyclerview.widget.RecyclerView.Adapter
+
 import com.example.weknot_android.R
 import com.example.weknot_android.model.feed.Feed
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.holder.FeedViewHolder
 import com.example.weknot_android.widget.recyclerview.navigator.feed.FeedAdapterNavigator
+
 import kotlin.collections.ArrayList
 
 class FeedAdapter : Adapter<FeedViewHolder>(), FeedAdapterNavigator {
@@ -50,7 +54,6 @@ class FeedAdapter : Adapter<FeedViewHolder>(), FeedAdapterNavigator {
         this.feeds = feeds!!
         notifyDataSetChanged()
     }
-
 
     override fun getItemCount(): Int {
         return if(::feeds.isInitialized) feeds.size else 0

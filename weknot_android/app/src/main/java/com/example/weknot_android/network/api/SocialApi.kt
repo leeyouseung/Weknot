@@ -4,7 +4,9 @@ import com.example.weknot_android.model.user.Friend
 import com.example.weknot_android.network.request.FriendAddRequest
 import com.example.weknot_android.network.request.FriendRequest
 import com.example.weknot_android.network.response.Response
+
 import io.reactivex.Single
+
 import retrofit2.http.*
 
 interface SocialApi {

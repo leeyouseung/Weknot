@@ -2,8 +2,11 @@ package com.example.weknot_android.widget.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.databinding.DataBindingUtil
+
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.weknot_android.R
 import com.example.weknot_android.model.user.FbUser
 import com.example.weknot_android.widget.SingleLiveEvent
@@ -11,6 +14,7 @@ import com.example.weknot_android.widget.recyclerview.holder.ChatMemberViewHolde
 import com.example.weknot_android.widget.recyclerview.navigator.chatmember.ChatMemberAdapterNavigator
 
 class ChatMemberAdapter : RecyclerView.Adapter<ChatMemberViewHolder>(), ChatMemberAdapterNavigator {
+
     private lateinit var members: ArrayList<FbUser>
 
     val openProfile = SingleLiveEvent<String>()

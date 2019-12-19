@@ -1,12 +1,14 @@
 package com.example.weknot_android.widget.recyclerview.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.base.viewmodel.BaseItemViewModel
 import com.example.weknot_android.model.user.Friend
 import com.example.weknot_android.util.Constants
 import com.example.weknot_android.widget.recyclerview.navigator.social.SocialItemNavigator
 
 class SocialItemViewModel : BaseItemViewModel<Friend, SocialItemNavigator>() {
+
     val name = MutableLiveData<String>()
     val point = MutableLiveData<String>()
     val picture = MutableLiveData<String>()

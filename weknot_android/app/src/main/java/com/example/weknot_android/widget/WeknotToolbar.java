@@ -2,18 +2,25 @@ package com.example.weknot_android.widget;
 
 import android.content.Context;
 import android.content.res.Resources;
+
 import android.graphics.Typeface;
+
 import android.util.AttributeSet;
+
 import android.view.Gravity;
+
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
 import androidx.appcompat.widget.Toolbar;
+
 import androidx.core.content.res.ResourcesCompat;
 
 import com.example.weknot_android.R;
 
 import java.lang.reflect.Field;
+
 import java.util.Optional;
 
 public class WeknotToolbar extends Toolbar {
@@ -45,6 +52,7 @@ public class WeknotToolbar extends Toolbar {
                     textView.setTextColor(getResources().getColor(R.color.colorMainDark));
                     textView.setTextSize(15);
                 } catch (Resources.NotFoundException ignore) {
+
                 }
 
                 LayoutParams layoutParams = generateDefaultLayoutParams();
@@ -53,6 +61,7 @@ public class WeknotToolbar extends Toolbar {
                 textView.setLayoutParams(layoutParams);
             }
         } catch (NoSuchFieldException | IllegalAccessException ignore) {
+
         }
     }
 
@@ -74,6 +83,7 @@ public class WeknotToolbar extends Toolbar {
                 textView.setLayoutParams(layoutParams);
             }
         } catch (NoSuchFieldException | IllegalAccessException ignore) {
+
         }
     }
 
@@ -99,6 +109,7 @@ public class WeknotToolbar extends Toolbar {
                 });
             }
         } catch (NoSuchFieldException | IllegalAccessException ignore) {
+
         }
     }
 

@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
+
 import com.f2prateek.rx.preferences2.Preference
 import com.f2prateek.rx.preferences2.RxSharedPreferences
-
 
 class UserId(context: Context) : ContextWrapper(context) {
     var id: String = ""

@@ -1,6 +1,5 @@
 package com.example.weknot_android.model.chat
 
-
 class PrivateChatRoom {
     var user_1: String? = null
     var user_2: String? = null

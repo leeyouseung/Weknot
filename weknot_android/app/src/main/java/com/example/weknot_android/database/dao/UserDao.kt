@@ -5,6 +5,7 @@ import androidx.room.Query
 
 import com.example.weknot_android.base.BaseDao
 import com.example.weknot_android.model.user.User
+
 import io.reactivex.Single
 
 @Dao

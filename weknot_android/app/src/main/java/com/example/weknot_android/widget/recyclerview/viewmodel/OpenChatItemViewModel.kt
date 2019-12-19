@@ -1,12 +1,14 @@
 package com.example.weknot_android.widget.recyclerview.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+
 import com.example.weknot_android.R
 import com.example.weknot_android.base.viewmodel.BaseItemViewModel
 import com.example.weknot_android.model.chat.ChatRoom
 import com.example.weknot_android.widget.recyclerview.navigator.openchat.OpenChatItemNavigator
 
 class OpenChatItemViewModel : BaseItemViewModel<ChatRoom, OpenChatItemNavigator>() {
+
     val name = MutableLiveData<String>()
     val number = MutableLiveData<String>()
     val master = MutableLiveData<String>()

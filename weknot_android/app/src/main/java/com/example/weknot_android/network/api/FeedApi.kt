@@ -2,9 +2,12 @@ package com.example.weknot_android.network.api
 
 import com.example.weknot_android.model.feed.Feed
 import com.example.weknot_android.network.response.Response
+
 import io.reactivex.Single
+
 import okhttp3.MultipartBody.Part
 import okhttp3.RequestBody
+
 import retrofit2.http.*
 
 interface FeedApi {

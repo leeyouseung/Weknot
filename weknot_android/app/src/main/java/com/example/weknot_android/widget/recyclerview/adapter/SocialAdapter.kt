@@ -2,8 +2,11 @@ package com.example.weknot_android.widget.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.databinding.DataBindingUtil
+
 import androidx.recyclerview.widget.RecyclerView.Adapter
+
 import com.example.weknot_android.R
 import com.example.weknot_android.model.user.Friend
 import com.example.weknot_android.network.request.FriendRequest
@@ -12,6 +15,7 @@ import com.example.weknot_android.widget.recyclerview.holder.SocialViewHolder
 import com.example.weknot_android.widget.recyclerview.navigator.social.SocialAdapterNavigator
 
 class SocialAdapter : Adapter<SocialViewHolder>(), SocialAdapterNavigator {
+
     private lateinit var friends: List<Friend>
 
     val checkFriendEvent = SingleLiveEvent<FriendRequest>()
@@ -47,5 +51,4 @@ class SocialAdapter : Adapter<SocialViewHolder>(), SocialAdapterNavigator {
     override fun getItemCount(): Int {
         return if(::friends.isInitialized) friends.size else 0
     }
-
 }

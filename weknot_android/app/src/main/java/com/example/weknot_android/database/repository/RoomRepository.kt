@@ -1,12 +1,13 @@
 package com.example.weknot_android.database.repository
 
 import android.app.Application
+
 import com.example.weknot_android.database.dao.OpenChatDao
 import com.example.weknot_android.database.dao.UserDao
-
 import com.example.weknot_android.database.database.RoomDatabase
 import com.example.weknot_android.model.chat.OpenChatRoom
 import com.example.weknot_android.model.user.User
+
 import io.reactivex.Completable
 import io.reactivex.Single
 

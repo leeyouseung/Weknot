@@ -6,7 +6,9 @@ import com.example.weknot_android.model.user.Friend
 import com.example.weknot_android.network.api.SocialApi
 import com.example.weknot_android.network.request.FriendAddRequest
 import com.example.weknot_android.network.request.FriendRequest
+
 import com.google.firebase.database.FirebaseDatabase
+
 import io.reactivex.Single
 
 class SocialComm : BaseComm<SocialApi>() {

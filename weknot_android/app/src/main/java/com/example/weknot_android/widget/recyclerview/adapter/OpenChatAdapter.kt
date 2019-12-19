@@ -2,16 +2,19 @@ package com.example.weknot_android.widget.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.databinding.DataBindingUtil
+
 import androidx.recyclerview.widget.RecyclerView.Adapter
+
 import com.example.weknot_android.R
 import com.example.weknot_android.model.chat.ChatRoom
 import com.example.weknot_android.widget.SingleLiveEvent
 import com.example.weknot_android.widget.recyclerview.holder.OpenChatViewHolder
 import com.example.weknot_android.widget.recyclerview.navigator.openchat.OpenChatAdapterNavigator
 
-
 class OpenChatAdapter : Adapter<OpenChatViewHolder>(), OpenChatAdapterNavigator {
+
     private lateinit var openChatRooms: List<ChatRoom>
     private lateinit var keys: List<String>
 
@@ -42,5 +45,4 @@ class OpenChatAdapter : Adapter<OpenChatViewHolder>(), OpenChatAdapterNavigator 
     override fun getItemCount(): Int {
         return if(::openChatRooms.isInitialized) openChatRooms.size else 0
     }
-
 }
