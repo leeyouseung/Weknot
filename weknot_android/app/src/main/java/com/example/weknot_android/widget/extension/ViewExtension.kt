@@ -1,7 +1,9 @@
-package net.gahfy.mvvmposts.utils.extension
+package com.example.weknot_android.widget.extension
 
 import android.content.ContextWrapper
+
 import android.view.View
+
 import androidx.appcompat.app.AppCompatActivity
 
 fun View.getParentActivity(): AppCompatActivity?{

@@ -9,6 +9,7 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.SplashActivityBinding
 import com.example.weknot_android.viewmodel.SplashViewModel
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class SplashActivity : BaseActivity<SplashActivityBinding, SplashViewModel>() {
 
@@ -30,11 +31,11 @@ class SplashActivity : BaseActivity<SplashActivityBinding, SplashViewModel>() {
     override fun initObserver() {
         with(viewModel) {
             openMain.observe(this@SplashActivity, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                this@SplashActivity.startActivityWithFinish(MainActivity::class.java)
             })
 
             onErrorEvent.observe(this@SplashActivity, Observer {
-                startActivityWithFinish(LoginActivity::class.java)
+                this@SplashActivity.startActivityWithFinish(LoginActivity::class.java)
             })
         }
     }
@@ -46,7 +47,7 @@ class SplashActivity : BaseActivity<SplashActivityBinding, SplashViewModel>() {
 
     private fun setUp() {
         if (viewModel.token == "") {
-            startActivityWithFinish(LoginActivity::class.java)
+            this@SplashActivity.startActivityWithFinish(LoginActivity::class.java)
         }
         else {
             viewModel.autoLogin()

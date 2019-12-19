@@ -15,6 +15,9 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
 import com.example.weknot_android.databinding.SignUpActivityBinding
 import com.example.weknot_android.viewmodel.SignUpViewModel
+import com.example.weknot_android.widget.extension.longToast
+import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewModel>() {
 
@@ -37,23 +40,23 @@ class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewMode
         with(viewModel) {
 
             onSuccessEvent.observe(this@SignUpActivity, Observer {
-                simpleToast(it)
+                this@SignUpActivity.shortToast(it)
             })
 
             signUpEvent.observe(this@SignUpActivity, Observer {
                 if (isEmpty()) {
-                    simpleToast(R.string.empty_message)
+                    this@SignUpActivity.shortToast(R.string.empty_message)
                     return@Observer
                 }
                 viewModel.signUp()
             })
 
             nullPointEvent.observe(this@SignUpActivity, Observer {
-                simpleToast(R.string.empty_picture_message)
+                this@SignUpActivity.shortToast(R.string.empty_picture_message)
             })
 
             openLogin.observe(this@SignUpActivity, Observer {
-                startActivityWithFinish(LoginActivity::class.java)
+                this@SignUpActivity.startActivityWithFinish(LoginActivity::class.java)
             })
 
             goToAlbum.observe(this@SignUpActivity, Observer {
@@ -66,11 +69,11 @@ class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewMode
             })
 
             backMessageToast.observe(this@SignUpActivity, Observer {
-                simpleToast(R.string.exist_message)
+                this@SignUpActivity.shortToast(R.string.exist_message)
             })
 
             onErrorEvent.observe(this@SignUpActivity, Observer {
-                simpleToast(it.message)
+                this@SignUpActivity.shortToast(it.message)
             })
         }
     }
@@ -91,7 +94,7 @@ class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewMode
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (supportActionBar != null) supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        longToast(R.string.signup_error_message)
+        this@SignUpActivity.longToast(R.string.signup_error_message)
     }
 
     private fun isEmpty(): Boolean {
@@ -103,7 +106,7 @@ class SignUpActivity : BasePictureActivity<SignUpActivityBinding, SignUpViewMode
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            startActivityWithFinish(LoginActivity::class.java)
+            this@SignUpActivity.startActivityWithFinish(LoginActivity::class.java)
             return true
         }
         return false

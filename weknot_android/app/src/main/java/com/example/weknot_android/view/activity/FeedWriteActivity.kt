@@ -16,6 +16,8 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BasePictureActivity
 import com.example.weknot_android.databinding.FeedWriteActivityBinding
 import com.example.weknot_android.viewmodel.FeedWriteViewModel
+import com.example.weknot_android.widget.extension.shortToast
+import com.example.weknot_android.widget.extension.startActivityWithFinish
 
 class FeedWriteActivity : BasePictureActivity<FeedWriteActivityBinding, FeedWriteViewModel>() {
 
@@ -38,7 +40,7 @@ class FeedWriteActivity : BasePictureActivity<FeedWriteActivityBinding, FeedWrit
         with(viewModel) {
 
             openMain.observe(this@FeedWriteActivity, Observer {
-                startActivityWithFinish(MainActivity::class.java)
+                this@FeedWriteActivity.startActivityWithFinish(MainActivity::class.java)
             })
 
             goToCrop.observe(this@FeedWriteActivity, Observer {
@@ -46,16 +48,16 @@ class FeedWriteActivity : BasePictureActivity<FeedWriteActivityBinding, FeedWrit
             })
 
             backMessageToast.observe(this@FeedWriteActivity, Observer {
-                simpleToast(R.string.exist_message)
-                startActivityWithFinish(MainActivity::class.java)
+                this@FeedWriteActivity.shortToast(R.string.exist_message)
+                this@FeedWriteActivity.startActivityWithFinish(MainActivity::class.java)
             })
 
             nullPointerException.observe(this@FeedWriteActivity, Observer {
-                simpleToast(R.string.empty_message)
+                this@FeedWriteActivity.shortToast(R.string.empty_message)
             })
 
             onErrorEvent.observe(this@FeedWriteActivity, Observer {
-                simpleToast(it.message)
+                this@FeedWriteActivity.shortToast(it.message)
             })
         }
     }

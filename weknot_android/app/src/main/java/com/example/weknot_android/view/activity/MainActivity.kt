@@ -14,6 +14,7 @@ import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.MainActivityBinding
 import com.example.weknot_android.view.dialog.LogoutDialog
 import com.example.weknot_android.viewmodel.MainViewModel
+import com.example.weknot_android.widget.extension.shortToast
 import com.example.weknot_android.widget.viewpager.MainPagerAdapter
 
 import com.google.android.material.tabs.TabLayout
@@ -41,7 +42,7 @@ class MainActivity: BaseActivity<MainActivityBinding, MainViewModel>() {
         with(viewModel) {
 
             onErrorEvent.observe(this@MainActivity, Observer {
-                simpleToast(it.message)
+                this@MainActivity.shortToast(it.message)
             })
         }
     }

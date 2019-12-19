@@ -1,18 +1,25 @@
 package com.example.weknot_android.base.activity
 
 import android.app.ActivityManager
+
 import android.content.Context
 import android.content.Intent
+
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
-import android.widget.Toast
+
 import androidx.annotation.LayoutRes
+
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+
 import androidx.fragment.app.Fragment
+
 import androidx.lifecycle.ViewModelProviders
+
 import com.example.weknot_android.base.viewmodel.BaseViewModel
 import com.example.weknot_android.databinding.AppBarBinding
 
@@ -91,36 +98,6 @@ abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel<*>> : AppCo
         if (VERSION.SDK_INT != VERSION_CODES.O) {
             super.setRequestedOrientation(requestedOrientation)
         }
-    }
-
-
-    protected fun startActivity(activity: Class<*>) {
-        startActivity(Intent(this, activity))
-    }
-
-    protected fun startActivityWithFinish(activity: Class<*>) {
-        startActivityWithFinish(Intent(this, activity))
-    }
-
-    protected fun startActivityWithFinish(intent: Intent) {
-        startActivity(intent)
-        finish()
-    }
-
-    protected fun simpleToast(message: String?) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    protected fun simpleToast(message: Int) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    protected fun longToast(message: String?) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
-
-    protected fun longToast(message: Int) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     companion object {

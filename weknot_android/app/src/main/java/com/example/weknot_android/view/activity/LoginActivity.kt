@@ -7,6 +7,7 @@ import com.example.weknot_android.R
 import com.example.weknot_android.base.activity.BaseActivity
 import com.example.weknot_android.databinding.LoginActivityBinding
 import com.example.weknot_android.viewmodel.LoginViewModel
+import com.example.weknot_android.widget.extension.shortToast
 
 class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
 
@@ -34,7 +35,7 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
 
             loginEvent.observe(this@LoginActivity, Observer {
                 if (isEmpty()) {
-                    simpleToast(R.string.empty_message)
+                    this@LoginActivity.shortToast(R.string.empty_message)
                     return@Observer
                 }
 
@@ -42,7 +43,7 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
             })
 
             onErrorEvent.observe(this@LoginActivity, Observer {
-                simpleToast(it.message)
+                this@LoginActivity.shortToast(it.message)
             })
 
             onSuccessEvent.observe(this@LoginActivity, Observer {
