@@ -152,7 +152,6 @@ exports.registerUser = (user) => {
   });
 }*/
 
-
 exports.showUserProfile = (cid) => {
   const sql = 'SELECT id,name,birth,gender,photo,intro,scope,point FROM user WHERE id = ?';
   const query = (conn) => {
